@@ -1,0 +1,7 @@
+.fixed-size {
+    resize: none;
+}
+
+.no-underline {
+    text-decoration: none;
+}

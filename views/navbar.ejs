@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="collapse navbar-collapse">
+      <div class="navbar-nav flex-grow-0">
+        <a class="nav-item nav-link" href="/tapkieg">Táplálékkiegészítők</a>
+        <a class="nav-item nav-link" href="/osszetevo">Összetevők</a>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse flex-grow-0">
+      <ul class="navbar-nav text-right">
+          <li class="nav-item active">
+            <% if(belepve === true) {%>
+              <a class="nav-link" href="/logout">Kijelentkezés</a>
+            <% } %>
+            <% if(belepve === undefined) {%>
+              <a class="nav-link" href="/login">Bejelentkezés</a>
+            <% } %>
+          </li>
+      </ul>
+  </div>
+</nav>

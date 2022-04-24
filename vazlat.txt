@@ -1,0 +1,61 @@
+index.html - táplálékkiegészítő lista
+tapkieg_felvetel.html - táplálékkiegészítő felvétele az adatbázisba/szerkesztése
+tapkieg_reszletes.html - egy adott tápkieg részletesebb nézete
+osszetevok.html - összetevő lista
+osszetevo_felvetel.html - összetevő felvétele az adatbázisba/szerkesztése
+osszetevo_reszletes.html - egy adott összetevő részletesebb nézete
+admin_login.html - admin bejelentkezés képernyő
+
+
+middleware
+	-renderMW
+	-requredOptionsMW
+
+auth
+	-authMW			- megnézi, hogy van-e session
+	-checkPwdMW		- jelszót néz
+	-logoutMW		- megszünteti a session-t
+	-inverseAuthMW 	- megnézi, nincs-e session
+
+tapkieg
+	-getTapkiegMW
+	-saveTapkiegMW
+	-deleteTapkiegMW
+	-getAllTapkiegMW
+
+osszetevo
+	-getOsszetevoMW
+	-saveOsszetevoMW
+	-getAllOsszetevoMW 
+
+
+routing
+
+GET / 									- -> index.hmtl
+
+GET /login 								- admin_login.html
+POST /login 							- check pwd
+
+USE /logout  							- kijelentkezés
+
+GET /tapkieg							- index.hmtl, táplálékkiegészítő lista
+
+GET /tapkieg/new						- tapkieg_felvetel.hmtl (new)
+POST /tapkieg/new
+
+GET /tapkieg/edit/:tapkiegid			- tapkieg_felvetel.hmtl (edit)
+POST /tapkieg/edit/:tapkiegid
+DEL /tapkieg/del/:tapkiegid
+
+GET /tapkieg/detailed/:tapkiegid   	 	- tapkieg_reszletes.html
+
+
+GET /osszetevo
+
+GET /osszetevo/new						- osszetevo_felvetel.hmtl (new)
+POST /osszetevo/new
+
+GET /osszetevo/edit/:osszetevoid		- osszetevo_felvetel.hmtl (edit)
+POST /osszetevo/edit/:osszetevoid
+
+GET /osszetevo/detailed/:osszetevoid    - osszetevo_reszletes.html

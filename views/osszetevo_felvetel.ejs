@@ -1,0 +1,29 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+    
+    <div class="container mt-3">
+      <form method="post">
+        <div class="col-lg-6">
+            <label for="nev" class="form-label">Összetevő neve: </label>
+            <input class="" type="text" id="nev" name="nev" value="<%= (typeof osszetevo === 'undefined') ? '' : osszetevo.nev%>">
+        </div>
+        <div class="col-lg-5 col-md-8 d-inline">
+            <label for="leiras" class="form-label d-block">Leírás: </label>
+            <textarea class="col-lg-5 col-md-8" id="leiras" name="leiras" rows="8"><%= (typeof osszetevo === 'undefined') ? '' : osszetevo.leiras%></textarea>
+        </div>
+    
+        <label class="d-block" for="ajanlottAdag">Ajánlott adag: </label>
+        <input type="text" class="d-block" id="ajanlottAdag" name="ajanlottAdag" value="<%= (typeof osszetevo === 'undefined') ? '' : osszetevo.ajanlottAdag%>">
+        <div class="col-lg-5">
+            <label for="formFile" class="form-label">Kép:</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        
+        <% if (typeof osszetevo === 'undefined') { %>
+            <button type="submit" class="btn btn-outline-primary mt-3" role="button">Létrehozás</button>
+        <% } else { %>
+            <button type="submit" class="btn btn-outline-primary mt-3" role="button">Módosítás</button>
+        <% } %>
+    </form>
+    </div>
+<%- include('footer') -%>

@@ -1,0 +1,22 @@
+<%- include('header') -%>
+<%- include('navbar') -%>
+    
+    <div class="container mt-3">
+      <h1 class="d-inline">Táplálékkiegészítők</h1>
+      <% if(belepve === true) { %>
+        <a class="btn btn-outline-primary float-lg-end" href="/tapkieg/new" role="button">Új felvétele</a>
+      <% } %>
+  
+      <% for (key in tapkiegek) {const tapkieg = tapkiegek[key]; %>
+        <div class="m-2">
+          <div class="d-inline-block align-top">
+            <img class="align-top" src="https://via.placeholder.com/150" alt="">
+          </div>
+          <div class="d-inline-block">
+            <a href="/tapkieg/detailed/<%= tapkieg._id %>" class="align-top link-secondary no-underline"><%=tapkieg.nev%></a>
+            <textarea readonly class="fixed-size d-block" rows="5"><%=tapkieg.leiras%></textarea>
+          </div>
+        </div>
+      <% } %>
+
+<%- include('footer') -%>
