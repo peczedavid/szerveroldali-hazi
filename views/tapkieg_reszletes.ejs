@@ -4,7 +4,7 @@
         <h1><%= tapkieg.nev %></h1>
 
         <textarea readonly class="col-lg-5 col-md-8 fixed-size" rows="8"><%= tapkieg.leiras%></textarea>
-        <img class="align-top detailed-image" src="<%= (typeof tapkieg.kep === 'undefined') ? 'https://via.placeholder.com/200' : tapkieg.kep%>" alt="">
+        <img class="align-top detailed-image" src="<%= tapkieg.kep %>" alt="">
         <label class="d-block">Ajánlott adag: </label>
         <label class="d-block"><%= tapkieg.ajanlottAdag %> </label>
 

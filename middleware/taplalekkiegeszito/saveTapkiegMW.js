@@ -76,6 +76,7 @@
             });
         }
         else {
+            res.locals.tapkieg.kep = '/media/placeholder.jpg';
             Promise.all(promises).then((values) => {
                 res.locals.tapkieg._osszetevok = values;
     

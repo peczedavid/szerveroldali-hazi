@@ -39,6 +39,7 @@
             });
         }
         else {
+            res.locals.osszetevo.kep = '/media/placeholder.jpg';
             res.locals.osszetevo.save(err => {
                 if(err) return next(err);
 

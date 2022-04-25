@@ -4,7 +4,7 @@
     <div class="container mt-3">
       <h1><%= osszetevo.nev %></h1>
       <textarea readonly class="col-lg-5 col-md-8 fixed-size" rows="8"><%= osszetevo.leiras %></textarea>
-      <img class="align-top detailed-image" src="<%= (typeof osszetevo.kep === 'undefined') ? 'https://via.placeholder.com/200' : osszetevo.kep%>" alt="">
+      <img class="align-top detailed-image" src="<%= osszetevo.kep %>" alt="">
       <label class="d-block">Ajánlott adag: </label>
       <label class="d-block"><%= osszetevo.ajanlottAdag %></label>
    
