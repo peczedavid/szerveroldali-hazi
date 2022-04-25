@@ -26,9 +26,10 @@
 
         res.locals.tapkieg._osszetevok = [];
         const promises = [];
-        req.body.osszetevok.forEach(id => {
+
+        if(typeof req.body.osszetevok === 'string') {
             promises.push(
-                OsszetevoModel.findOne( { _id: id} ,
+                OsszetevoModel.findOne( { _id: req.body.osszetevok} ,
                     (err, osszetevo) => {
                         if (err || !osszetevo) {
                             return next(err);
@@ -38,7 +39,23 @@
                     }
                 ).clone()
             );
-        });
+        }
+        else if(typeof req.body.osszetevok === 'object'){
+            req.body.osszetevok.forEach(id => {
+                promises.push(
+                    OsszetevoModel.findOne( { _id: id} ,
+                        (err, osszetevo) => {
+                            if (err || !osszetevo) {
+                                return next(err);
+                            }
+            
+                            return osszetevo;
+                        }
+                    ).clone()
+                );
+            });
+        }
+        
         Promise.all(promises).then((values) => {
             res.locals.tapkieg._osszetevok = values;
 

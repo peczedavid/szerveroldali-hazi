@@ -4,7 +4,7 @@ const db = require("../config/db");
 const Taplalekkiegeszito = db.model('Taplalekkiegeszito', {
     nev : String,
     leiras : String,
-    kepNev : String,
+    kep : String,
     ajanlottAdag : String,
     _osszetevok: [
         {

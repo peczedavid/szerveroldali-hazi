@@ -5,7 +5,7 @@ const db = require("../config/db");
 const Osszetevo = db.model('Osszetevo', {
     nev : String,
     leiras : String,
-    kepNev : String,
+    kep : String,
     ajanlottAdag : String
 });
 
