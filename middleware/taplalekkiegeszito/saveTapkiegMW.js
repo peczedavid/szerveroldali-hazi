@@ -31,8 +31,6 @@
                 OsszetevoModel.findOne( { _id: id} ,
                     (err, osszetevo) => {
                         if (err || !osszetevo) {
-                            console.log(err);
-                            console.log("Error");
                             return next(err);
                         }
         
@@ -42,8 +40,6 @@
             );
         });
         Promise.all(promises).then((values) => {
-            console.log(values);
-
             res.locals.tapkieg._osszetevok = values;
 
             res.locals.tapkieg.save(err => {

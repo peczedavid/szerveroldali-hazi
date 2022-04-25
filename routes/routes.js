@@ -58,7 +58,7 @@ module.exports = function (app) {
         getTapkiegMW(objRepo),
         saveTapkiegMW(objRepo));
 
-    app.del("/tapkieg/del/:tapkiegid",
+    app.get("/tapkieg/del/:tapkiegid",
         authMW(objRepo),
         getTapkiegMW(objRepo),
         deleteTapkiegMW(objRepo));

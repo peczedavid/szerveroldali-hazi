@@ -1,20 +1,22 @@
 <%- include('header') -%>
-<%- include('navbar') -%>
+  <%- include('navbar') -%>
     <div class="container mt-3">
-      <h1><%= tapkieg.nev %></h1>
-      <textarea readonly class="col-lg-5 col-md-8 fixed-size" rows="8"><%= tapkieg.leiras%></textarea>
-      <img class="align-top" src="https://via.placeholder.com/200" alt="">
-      <label class="d-block">Ajánlott adag: </label>
-      <label class="d-block"><%= tapkieg.ajanlottAdag %></label>
-     
-      <label class="d-block">Összetevők: </label>
-      <ul>
-        <% for (key in tapkieg._osszetevok) {const osszetevo = tapkieg._osszetevok[key]; %>
-          <li><%= osszetevo.nev%></li>
+        <h1><%= tapkieg.nev %></h1>
+
+        <textarea readonly class="col-lg-5 col-md-8 fixed-size" rows="8"><%= tapkieg.leiras%></textarea>
+        <img class="align-top" src="https://via.placeholder.com/200" alt="">
+        <label class="d-block">Ajánlott adag: </label>
+        <label class="d-block"><%= tapkieg.ajanlottAdag %> </label>
+
+        <label class="d-block">Összetevők: </label>
+        <ul>
+          <% for (key in tapkieg._osszetevok) {const osszetevo=tapkieg._osszetevok[key]; %>
+            <li><%= osszetevo.nev%></li>
+          <% } %>
+        </ul>
+        <% if(belepve===true) {%>
+          <a class="btn btn-outline-primary" href="/tapkieg/edit/<%= tapkieg._id %>" role="button">Módosítás</a>
+          <a class="btn btn-outline-danger" href="/tapkieg/del/<%= tapkieg._id %>" role="button">Törlés</a>
         <% } %>
-      </ul>
-      <% if(belepve === true) {%>
-        <a class="btn btn-outline-primary" href="/tapkieg/edit/<%= tapkieg._id %>" role="button">Módosítás</a>
-      <% } %>
     </div>
-<%- include('footer') -%>
+    <%- include('footer') -%>
