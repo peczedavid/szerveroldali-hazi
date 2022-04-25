@@ -10,7 +10,6 @@
     const OsszetevoModel = requireOption(objectrepository, 'OsszetevoModel');
 
      return function (req, res, next) {
-        console.log("Save osszetevo");
         if( typeof req.body.nev === 'undefined' ||
             typeof req.body.leiras === 'undefined' ||
             typeof req.body.ajanlottAdag === 'undefined'
@@ -23,10 +22,29 @@
         res.locals.osszetevo.nev = req.body.nev;
         res.locals.osszetevo.leiras = req.body.leiras;
         res.locals.osszetevo.ajanlottAdag = req.body.ajanlottAdag;
-        res.locals.osszetevo.save(err => {
-            if(err) return next(err);
 
-            return res.redirect("/osszetevo");
-        });
+        const fileExists = (req.files !== null && typeof req.files.kep !== 'undefined');
+        let file;
+        let path;
+        if(fileExists) {
+            file = req.files.kep;
+            path = './static/media/' + file.name;
+            res.locals.osszetevo.kep = '/media/' + file.name;
+            file.mv(path).then(v => {
+                res.locals.osszetevo.save(err => {
+                    if(err) return next(err);
+    
+                    return res.redirect("/osszetevo");
+                });
+            });
+        }
+        else {
+            res.locals.osszetevo.save(err => {
+                if(err) return next(err);
+
+                return res.redirect("/osszetevo");
+            });
+        }
+        
      };
  };

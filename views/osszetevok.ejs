@@ -10,7 +10,7 @@
       <% for (key in osszetevok) {const osszetevo = osszetevok[key]; %>
         <div class="m-2">
           <div class="d-inline-block align-top">
-            <img class="align-top" src="https://via.placeholder.com/150" alt="">
+            <img class="align-top list-image" src="<%= (typeof osszetevo.kep === 'undefined') ? 'https://via.placeholder.com/150' : osszetevo.kep%>" alt="">
           </div>
           <div class="d-inline-block">
             <a href="/osszetevo/detailed/<%= osszetevo._id%>" class="align-top link-secondary no-underline"><%= osszetevo.nev%></a>

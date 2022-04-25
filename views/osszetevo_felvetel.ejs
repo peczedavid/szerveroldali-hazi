@@ -2,7 +2,7 @@
 <%- include('navbar') -%>
     
     <div class="container mt-3">
-      <form method="post">
+      <form method="post" enctype="multipart/form-data">
         <div class="col-lg-6">
             <label for="nev" class="form-label">Összetevő neve: </label>
             <input class="" type="text" id="nev" name="nev" value="<%= (typeof osszetevo === 'undefined') ? '' : osszetevo.nev%>">
@@ -15,8 +15,8 @@
         <label class="d-block" for="ajanlottAdag">Ajánlott adag: </label>
         <input type="text" class="d-block" id="ajanlottAdag" name="ajanlottAdag" value="<%= (typeof osszetevo === 'undefined') ? '' : osszetevo.ajanlottAdag%>">
         <div class="col-lg-5">
-            <label for="formFile" class="form-label">Kép:</label>
-            <input class="form-control" type="file" id="formFile">
+            <label for="kep" class="form-label">Kép:</label>
+            <input class="form-control" type="file" name="kep" id="kep">
         </div>
         
         <% if (typeof osszetevo === 'undefined') { %>

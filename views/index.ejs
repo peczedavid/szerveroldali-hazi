@@ -10,7 +10,7 @@
       <% for (key in tapkiegek) {const tapkieg = tapkiegek[key]; %>
         <div class="m-2">
           <div class="d-inline-block align-top">
-            <img class="align-top" src="https://via.placeholder.com/150" alt="">
+            <img class="align-top list-image" src="<%= (typeof tapkieg.kep === 'undefined') ? 'https://via.placeholder.com/150' : tapkieg.kep%>" alt="">
           </div>
           <div class="d-inline-block">
             <a href="/tapkieg/detailed/<%= tapkieg._id %>" class="align-top link-secondary no-underline"><%=tapkieg.nev%></a>

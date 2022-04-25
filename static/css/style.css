@@ -5,3 +5,13 @@
 .no-underline {
     text-decoration: none;
 }
+
+.list-image {
+    width: 150px;
+    height: 150px;
+}
+
+.detailed-image {
+    width: 200px;
+    height: 200px;
+}

@@ -56,14 +56,37 @@
             });
         }
         
-        Promise.all(promises).then((values) => {
-            res.locals.tapkieg._osszetevok = values;
-
-            res.locals.tapkieg.save(err => {
-                if(err) return next(err);
-    
-                return res.redirect("/tapkieg");
+        const fileExists = (req.files !== null && typeof req.files.kep !== 'undefined');
+        let file;
+        let path;
+        if(fileExists) {
+            file = req.files.kep;
+            path = './static/media/' + file.name;
+            res.locals.tapkieg.kep = '/media/' + file.name;
+            file.mv(path).then(v => {
+                Promise.all(promises).then((values) => {
+                    res.locals.tapkieg._osszetevok = values;
+        
+                    res.locals.tapkieg.save(err => {
+                        if(err) return next(err);
+            
+                        return res.redirect("/tapkieg");
+                    });
+                });
             });
-        });
+        }
+        else {
+            Promise.all(promises).then((values) => {
+                res.locals.tapkieg._osszetevok = values;
+    
+                res.locals.tapkieg.save(err => {
+                    if(err) return next(err);
+        
+                    return res.redirect("/tapkieg");
+                });
+            });
+        }
+
+        
      };
  };
