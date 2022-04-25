@@ -7,17 +7,15 @@ const requireOption = require('../requireOptionMW');
  module.exports = function (objectrepository) {
      return function (req, res, next) {
          if(typeof req.body.jelszo === 'undefined') {
-             console.log("Helytelen jelszó");
              return next();
          }
 
-         if(req.body.jelszo === 'admin') {
+         if(req.body.nev === 'admin' && req.body.jelszo === 'admin') {
              req.session.belepve = true;
-             return req.session.save(err => res.redirect("/tapkieg"));
+             return req.session.save(() => res.redirect("/tapkieg"));
          }
 
-         res.locals.error = 'Hibás jelszó';
-         console.log('Hibás jelszó');
+         res.locals.error = 'Hibás adatok';
          return next();
      };
  };
