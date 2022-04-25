@@ -1,7 +1,6 @@
 const authMW = require("../middleware/auth/authMW");
 const navbarMW = require("../middleware/navbarMW");
 const checkPwdMW = require("../middleware/auth/checkPwdMW");
-const inverseAuthMW = require("../middleware/auth/inverseAuthMW");
 const logoutMW = require("../middleware/auth/logoutMW");
 
 const getAllOsszetevoMW = require("../middleware/osszetevo/getAllOsszetevoMW");
@@ -27,7 +26,7 @@ module.exports = function (app) {
     app.use(navbarMW);
 
     app.get("/login",
-        inverseAuthMW(objRepo),
+        //inverseAuthMW(objRepo),
         renderMW(objRepo, "admin_login"));
 
     app.post("/login",
