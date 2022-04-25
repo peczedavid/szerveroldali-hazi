@@ -5,9 +5,9 @@
 module.exports = (objectRepository) => {
     return (req, res, next) => {
         res.locals.belepve = false;
-        req.session.destroy(err => {
+        req.session.destroy(() => {
             res.locals.belepve = false;
-            res.redirect("/tapkieg");
+            return res.redirect("/tapkieg");
         });
     };
 };
