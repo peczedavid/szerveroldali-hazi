@@ -8,14 +8,15 @@
       <% } %>
   
       <% for (key in osszetevok) {const osszetevo = osszetevok[key]; %>
-        <div class="m-2">
+        <div class="m-2 col-6">
           <div class="d-inline-block align-top">
             <img class="align-top list-image" src="<%= osszetevo.kep %>" alt="">
           </div>
-          <div class="d-inline-block">
+          <div class="d-inline-block col-5" style="width: 60%;">
             <a href="/osszetevo/detailed/<%= osszetevo._id%>" class="align-top link-secondary no-underline"><%= osszetevo.nev%></a>
-            <textarea readonly class="fixed-size d-block" rows="5"><%= osszetevo.leiras %></textarea>
+            <textarea readonly class="textarea-list d-block" rows="5"><%= osszetevo.leiras %></textarea>
           </div>
         </div>
       <% } %>
+    </div>
 <%- include('footer') -%>

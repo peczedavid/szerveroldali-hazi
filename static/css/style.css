@@ -1,5 +1,8 @@
-.fixed-size {
+.textarea-list {
     resize: none;
+    width: 100%;
+    overflow: hidden;
+    border: none;
 }
 
 .no-underline {
@@ -15,3 +18,5 @@
     width: 200px;
     height: 200px;
 }
+
+.border { border: 1px solid red !important; }

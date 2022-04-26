@@ -26,7 +26,6 @@ module.exports = function (app) {
     app.use(navbarMW);
 
     app.get("/login",
-        //inverseAuthMW(objRepo),
         renderMW(objRepo, "admin_login"));
 
     app.post("/login",
