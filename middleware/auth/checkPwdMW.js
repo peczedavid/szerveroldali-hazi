@@ -1,5 +1,5 @@
 /**
- * Leellenőrzi a jelszót és a nevet POST-ból, ha helyes a jelszó és a név, akkor a főoldalra (/tapkieg) dob vissza és létrehoz egy session-t.
+ * Leellenőrzi a jelszót és a nevet POST-ból, ha helyes a jelszó és a név, akkor a főoldalra (/tapkieg) dob és létrehoz egy session-t.
  */
 
 const requireOption = require('../requireOptionMW');

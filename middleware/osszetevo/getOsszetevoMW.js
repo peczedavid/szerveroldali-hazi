@@ -14,9 +14,7 @@
                 _id: req.params.osszetevoid
             },
             (err, osszetevo) => {
-                if (err || !osszetevo) {
-                    return next(err);
-                }
+                if (err || !osszetevo) { return next(err); }
 
                 res.locals.osszetevo = osszetevo;
                 return next();

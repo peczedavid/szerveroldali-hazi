@@ -10,9 +10,7 @@
     
     return function (req, res, next) {
         OsszetevoModel.find({}, (err, osszetevok) => {
-            if(err) {
-                return next(err);
-            }
+            if(err) { return next(err); }
 
             res.locals.osszetevok = osszetevok;
             return next();
