@@ -22,7 +22,7 @@
             <label for="osszetevok" class="align-top">Összetevő(k) kiválasztása:</label>
              <select name="osszetevok" id="osszetevok" multiple='multiple'>
               <% for(key in osszetevok) { const osszetevo = osszetevok[key] %>
-                <% if(tapkieg._osszetevok.some(o => o._id.equals(osszetevo._id))) {  %>
+                <% if(typeof tapkieg !== 'undefined' && tapkieg._osszetevok.some(o => o._id.equals(osszetevo._id))) {  %>
                     <option selected value="<%=osszetevo._id%>"><%= osszetevo.nev %></option>
                 <% } else {%>
                     <option value="<%=osszetevo._id%>"><%= osszetevo.nev %></option>
