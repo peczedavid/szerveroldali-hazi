@@ -22,23 +22,3 @@
         );
     };
  };
-
-//  module.exports = function (objectrepository) {
-//     const TapkiegModel = requireOption(objectrepository, 'TapkiegModel');
-
-//     return function(req, res, next) {
-//         TapkiegModel.findOne(
-//             {
-//                 _id: req.params.tapkiegid
-//             },
-//             (err, tapkieg) => {
-//                 if (err || !tapkieg) {
-//                     return next(err);
-//                 }
-
-//                 res.locals.tapkieg = tapkieg;
-//                 return next();
-//             }
-//         );
-//     };
-//  };
