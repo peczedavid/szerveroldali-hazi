@@ -4,6 +4,10 @@ var getTapkiegMW = require('../../../../middleware/taplalekkiegeszito/getTapkieg
 describe('getTapkieg middleware ', function () {
 
   it('should return a tapkieg', function (done) {
+    const mw = getTapkiegMW({});
 
+    mw({}, {}, () => {
+
+    });
   });
 });
