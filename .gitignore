@@ -2,3 +2,4 @@ node_modules/
 static/media/*
 !stastic/media/placeholder.jpg
 *.zip
+.nyc_output/
