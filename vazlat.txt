@@ -7,6 +7,7 @@ osszetevo_reszletes.html - egy adott összetevő részletesebb nézete
 admin_login.html - admin bejelentkezés képernyő
 
 
+
 middleware
 	-renderMW
 	-requredOptionsMW
@@ -27,6 +28,7 @@ osszetevo
 	-getOsszetevoMW
 	-saveOsszetevoMW
 	-getAllOsszetevoMW 
+
 
 
 routing
